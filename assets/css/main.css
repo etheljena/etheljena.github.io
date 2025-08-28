@@ -4,6 +4,7 @@
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 */
 
 html, body, div, span, applet, object,
@@ -3907,3 +3908,18 @@ input, select, textarea {
 			}
 
 		}
+
+/* === Hero image crop (prevents full-page takeover) === */
+#intro .inner > .image {
+  max-width: 720px;          /* keeps the photo from stretching too wide */
+  margin: 0 auto 2rem;       /* centers it and adds spacing */
+  border-radius: 0.5rem;     /* rounded corners */
+  overflow: hidden;          /* allows the crop */
+}
+#intro .inner > .image img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 45vh, 520px);  /* responsive height */
+  object-fit: cover;                  /* fills box, crops excess */
+  object-position: center 30%;        /* adjust crop focus */
+}
